@@ -5,43 +5,37 @@ const basename = path.basename(__filename);
 const db = {};
 require("dotenv").config();
 
-// Database trên vercel
+// Database trên console clever-cloud (https://console.clever-cloud.com/)
 
-// const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
-//     host: process.env.MYSQL_HOST,
-//     dialect: process.env.MYSQL_DIALECT ,
-//     operatorsAliases: false,
-//     connectionString: process.env.MYSQL_URL + "?sslmode=require",
-//     pool: {
-//         max: parseInt(process.env.POOL_MAX),
-//         min: parseInt(process.env.POOL_MIN),
-//         acquire: parseInt(process.env.POOL_ACQUIRE),
-//         idle: parseInt(process.env.POOL_IDLE),
-//     },
-//     dialectOptions: {
-//         ssl: {
-//             require: true,
-//             rejectUnauthorized: false, // Chỉ sử dụng trong môi trường phát triển hoặc kiểm tra, không nên sử dụng trong môi trường sản xuất.
-//         },
-//     },
-// });
+const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
+    host: process.env.MYSQL_HOST,
+    dialect: process.env.MYSQL_DIALECT ,
+    operatorsAliases: false,
+    connectionString: process.env.MYSQL_URL + "?sslmode=require",
+    pool: {
+        max: parseInt(process.env.POOL_MAX),
+        min: parseInt(process.env.POOL_MIN),
+        acquire: parseInt(process.env.POOL_ACQUIRE),
+        idle: parseInt(process.env.POOL_IDLE),
+    },
+});
 
 // Database trên local
 
-const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD,
-    {
-        host: process.env.MYSQL_HOST,
-        dialect: process.env.MYSQL_DIALECT,
-        operatorsAliases: false,
+// const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD,
+//     {
+//         host: process.env.MYSQL_HOST,
+//         dialect: process.env.MYSQL_DIALECT,
+//         operatorsAliases: false,
 
-        pool: {
-            max: parseInt(process.env.POOL_MAX),
-            min: parseInt(process.env.POOL_MIN),
-            acquire: parseInt(process.env.POOL_ACQUIRE),
-            idle: parseInt(process.env.POOL_IDLE),
-        },
-    }
-);
+//         pool: {
+//             max: parseInt(process.env.POOL_MAX),
+//             min: parseInt(process.env.POOL_MIN),
+//             acquire: parseInt(process.env.POOL_ACQUIRE),
+//             idle: parseInt(process.env.POOL_IDLE),
+//         },
+//     }
+// );
 
 fs.readdirSync(__dirname)
     .filter((file) => {

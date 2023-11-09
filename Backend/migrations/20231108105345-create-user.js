@@ -1,14 +1,9 @@
 "use strict";
-const fs = require('fs');
-const path = require('path');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     
     async up(queryInterface, Sequelize) {
-        const filePath = path.join(__dirname, '../public/Pictures/default-avatar.png');
-        const defaultAvatarBuffer = fs.readFileSync(filePath);
-
         await queryInterface.createTable("Users", {
             id: {
                 allowNull: false,
@@ -33,7 +28,6 @@ module.exports = {
             },
             avatar: {
                 type : Sequelize.BLOB('medium'),
-                defaultValue : defaultAvatarBuffer,
             },
             account: {
                 allowNull: false,
