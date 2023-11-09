@@ -10,7 +10,7 @@ app.use(express.json());
 const staticPath = path.join(__dirname, 'public');
 
 app.get('/',(req,res) => {
-    res.send('Shopee_api')
+    res.send('Vegetable_detection_mobile_api')
 })
 
 app.use(express.static(staticPath));
