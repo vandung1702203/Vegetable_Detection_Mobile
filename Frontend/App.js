@@ -1,31 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, Image } from "react-native";
 
-const PlaceholderImage = require('./assets/background-image.png');
-
-import Button from './components/Button';
-import ImageViewer from './components/ImageViewer';
+import Login from "./views/pages/login";
 
 export default function App() {
-  return (
-    <View
-      style={[
-        styles.container,
-        {
-          // Try setting `flexDirection` to `"row"`.
-          flexDirection: 'column',
-        },
-      ]}>
-      <View style={{flex: 1, backgroundColor: 'red'}} />
-      <View style={{flex: 2, backgroundColor: 'darkorange'}} />
-      <View style={{flex: 3, backgroundColor: 'green'}} />
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <Login />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });

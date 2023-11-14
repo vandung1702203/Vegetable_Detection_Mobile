@@ -4,10 +4,9 @@ const { toLocaleString } = require(process.cwd() + `/helpers/datetime`)
 module.exports = (sequelize, DataTypes) => {
     class Dish extends Model {
         static associate(models) {
-            // User.hasOne(models.Wallet, { foreignKey: 'user_id' })
-            // User.hasMany(models.FeedBack, {foreignKey : 'user_id'})
-            // User.hasMany(models.Cart, {foreignKey : 'user_id'})
-            // User.hasMany(models.Bill, {foreignKey : 'user_id'})
+            Dish.hasMany(models.DishImage, {foreignKey : 'dish_id'})
+            Dish.hasMany(models.LikeDish, {foreignKey : 'dish_id'})
+            Dish.belongsTo(models.Fruit, {foreignKey : 'fruit_id'})
         }
     }
     Dish.init(

@@ -4,6 +4,7 @@ const { toLocaleString } = require(process.cwd() + `/helpers/datetime`)
 module.exports = (sequelize, DataTypes) => {
     class DishImage extends Model {
         static associate(models) {
+            DishImage.belongsTo(models.Dish, { foreignKey: 'dish_id' })
         }
     }
     DishImage.init(

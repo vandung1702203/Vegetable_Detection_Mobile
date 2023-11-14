@@ -2,11 +2,12 @@
 const { Model } = require('sequelize')
 const { toLocaleString } = require(process.cwd() + `/helpers/datetime`)
 module.exports = (sequelize, DataTypes) => {
-    class FeedbackImage extends Model {
+    class FeedBackImage extends Model {
         static associate(models) {
+            FeedBackImage.belongsTo(models.FeedBack, {foreignKey : 'feedback_id'})
         }
     }
-    FeedbackImage.init(
+    FeedBackImage.init(
         {
             feedback_id: DataTypes.INTEGER,
             image : DataTypes.STRING,
@@ -22,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             sequelize,
-            modelName: 'FeedbackImage',
+            modelName: 'FeedBackImage',
         },
     )
-    return FeedbackImage
+    return FeedBackImage
 }

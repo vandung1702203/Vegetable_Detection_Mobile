@@ -25,4 +25,6 @@ app.use('/api/auth', routes.auth)
 // app.use('/api/user', routes.user)
 // app.use('/api/bill', routes.bill)
 
+app.use('/api/upload', routes.uploadImage)
+
 module.exports = app

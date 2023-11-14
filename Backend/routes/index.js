@@ -1,4 +1,5 @@
 const auth = require('./auth.route')
+const uploadImage = require('./upload')
 // const feedback = require('./feedback.route')
 // const cart = require('./cart.route')
 // const product = require('./product.route')
@@ -9,6 +10,7 @@ const auth = require('./auth.route')
 
 module.exports = {
     auth: auth,
+    uploadImage : uploadImage,
     // feedback: feedback,
     // cart: cart,
     // product : product,
