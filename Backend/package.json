@@ -4,6 +4,7 @@
   "description": "Backend - side",
   "main": "index.js",
   "scripts": {
+    "install-python-dependencies": "node install-python-dependencies.js",
     "start": "nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
