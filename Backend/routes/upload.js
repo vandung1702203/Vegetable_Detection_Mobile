@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const uploadImages = require('../controllers/api/uploadImages')
+const uploadImages = require('../controllers/api/upload')
 
 const dotenv = require('dotenv');
 dotenv.config();

@@ -1,5 +1,6 @@
 const auth = require('./auth.route')
 const uploadImage = require('./upload')
+const predict = require('./predict.route')
 // const feedback = require('./feedback.route')
 // const cart = require('./cart.route')
 // const product = require('./product.route')
@@ -11,6 +12,7 @@ const uploadImage = require('./upload')
 module.exports = {
     auth: auth,
     uploadImage : uploadImage,
+    predict : predict,
     // feedback: feedback,
     // cart: cart,
     // product : product,

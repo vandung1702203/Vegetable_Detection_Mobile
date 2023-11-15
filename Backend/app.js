@@ -26,5 +26,6 @@ app.use('/api/auth', routes.auth)
 // app.use('/api/bill', routes.bill)
 
 app.use('/api/upload', routes.uploadImage)
+app.use('/api/predict', routes.predict)
 
 module.exports = app
