@@ -3,6 +3,7 @@ const { PythonShell } = require("python-shell");
 async function predictImage(req, res) {
     try {
         const imgBuffer = req.file.buffer;
+        
         const imgBase64 = imgBuffer.toString("base64");
 
         let options = {

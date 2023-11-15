@@ -1,6 +1,8 @@
+import sys
+sys.path.append("../../opt/render/.local/lib/python3.7/site-packages")
+
 from PIL import Image
 import os
-import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
